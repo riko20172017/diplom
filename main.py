@@ -6,7 +6,7 @@ import segno
 # qrcode.save("basic_qrcode.png")
 
 with open('test.csv', 'r', newline='', encoding="cp1251", errors='ignore') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
+    spamreader = csv.reader(csvfile, delimiter=';')
     for row in spamreader:
         qrcode = segno.make_qr(row[1])
         qrcode.save(f"{row[0]}.png", scale=5)
